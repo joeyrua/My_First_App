@@ -63,6 +63,9 @@ class MainActivity : AppCompatActivity() {
                  Toast.makeText(this, "第一個值不能大於第二個值", Toast.LENGTH_SHORT).show()
                  result.setText("")
              }
+            else if(a.toInt()==b.toInt()){
+                Toast.makeText(this,"第一個值不能等於第三個值",Toast.LENGTH_SHORT).show()
+             }
             else{
                 val d =List(c.toInt()) {Random.nextInt(a.toInt(),b.toInt())}
                  result.setText("第一個值:"+a+"\n第二個值:"+b+"\n隨機數:"+d)
