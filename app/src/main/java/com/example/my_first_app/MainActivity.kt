@@ -16,6 +16,7 @@ import kotlin.random.Random
 class MainActivity : AppCompatActivity() {
     private lateinit var account: EditText
     private lateinit var password: EditText
+    private lateinit var input3:EditText
     private lateinit var login_btn:Button
     private lateinit var result:TextView
     val positiveButtonClick={
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         account = findViewById(R.id.account)
         password = findViewById(R.id.password)
+        input3 = findViewById(R.id.number3)
         login_btn = findViewById(R.id.login)
         result = findViewById(R.id.text)
 
@@ -36,8 +38,9 @@ class MainActivity : AppCompatActivity() {
 
             var a = account.text.toString()
             var b = password.text.toString()
-             if(a==""&&b==""){
-                 Toast.makeText(this, "兩個值都沒有填寫", Toast.LENGTH_SHORT).show()
+            var c = input3.text.toString()
+             if(a==""&&b==""&&c==""){
+                 Toast.makeText(this, "三個值都沒有填寫", Toast.LENGTH_SHORT).show()
                  result.setText("")
              }
             else if(b==""){
@@ -48,8 +51,12 @@ class MainActivity : AppCompatActivity() {
                  Toast.makeText(this, "第一個值沒有填寫", Toast.LENGTH_SHORT).show()
                  result.setText("")
              }
-            else if(a.toInt()==0||b.toInt()==0){
-                 Toast.makeText(this, "第一個值或第二個值不能輸入0", Toast.LENGTH_SHORT).show()
+            else if(c==""){
+                Toast.makeText(this,"第三個值沒有填寫",Toast.LENGTH_SHORT).show()
+                 result.setText("")
+             }
+            else if(a.toInt()==0||b.toInt()==0||c.toInt()==0){
+                 Toast.makeText(this, "第一個值或第二個值或第三個值不能輸入0", Toast.LENGTH_SHORT).show()
                  result.setText("")
              }
             else if(a.toInt()>b.toInt()){
@@ -57,8 +64,8 @@ class MainActivity : AppCompatActivity() {
                  result.setText("")
              }
             else{
-                val c =List(5) {Random.nextInt(a.toInt(),b.toInt())}
-                 result.setText("第一個值:"+a+"\n第二個值:"+b+"\n隨機數:"+c)
+                val d =List(c.toInt()) {Random.nextInt(a.toInt(),b.toInt())}
+                 result.setText("第一個值:"+a+"\n第二個值:"+b+"\n隨機數:"+d)
              }
             //result.setText(a+"\n"+b)
             //Toast.makeText(this,a+"\n"+b,Toast.LENGTH_SHORT).show()
