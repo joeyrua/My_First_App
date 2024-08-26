@@ -1,61 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swiperefresh"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:layout_margin="20dp"
+    android:background="@color/white"
     tools:context=".MainActivity">
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/account"
-        android:layout_margin="20dp"
-        android:digits="1234567890"
-        android:inputType="phone|number"
-        android:hint="請輸入第一個值"
-        />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/password"
-        android:layout_margin="20dp"
-        android:digits="1234567890"
-        android:inputType="phone|number"
-        android:hint="請輸入第二個值"
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/number3"
-        android:layout_margin="20dp"
-        android:digits="1234567890"
-        android:inputType="phone|number"
-        android:hint="請輸入第三個值"
-        />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/login"
+        android:orientation="vertical">
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textSize="20dp"
-            android:text="隨機">
-        </Button>
-    </LinearLayout>
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20dp">
+            android:id="@+id/account"
+            android:layout_margin="20dp"
+            android:digits="1234567890"
+            android:inputType="phone|number"
+            android:hint="請輸入第一個值"
+            />
 
-    </TextView>
-</LinearLayout>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/password"
+            android:layout_margin="20dp"
+            android:digits="1234567890"
+            android:inputType="phone|number"
+            android:hint="請輸入第二個值"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/number3"
+            android:layout_margin="20dp"
+            android:digits="1234567890"
+            android:inputType="phone|number"
+            android:hint="請輸入第三個值"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:text="隨機"
+                >
+            </Button>
+            <Button
+                android:id="@+id/restart_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:text="Restart"
+                android:visibility="gone">
+
+            </Button>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp">
+        </TextView>
+    </LinearLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
